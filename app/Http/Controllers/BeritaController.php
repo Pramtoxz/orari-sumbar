@@ -8,21 +8,11 @@ use Inertia\Inertia;
 
 class BeritaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(Request $request)
+    public function index()
     {
-        // Filter berita berdasarkan user yang login
-        // Admin dapat melihat semua berita, UKM hanya melihat berita milik mereka
-        if ($request->user()->role === 'admin') {
-            $berita = ModelBerita::with('user')->orderBy('tanggal', 'desc')->get();
-        } else {
-            $berita = ModelBerita::with('user')
-                ->where('user_id', $request->user()->id)
-                ->orderBy('tanggal', 'desc')
-                ->get();
-        }
+        $berita = ModelBerita::with('user')
+            ->orderBy('tanggal', 'desc')
+            ->get();
         
         return Inertia::render('berita/index', [
             'berita' => $berita
@@ -48,12 +38,12 @@ class BeritaController extends Controller
             'tanggal' => 'required|date',
         ]);
 
-        // Tambahkan user_id dari user yang sedang login
-        $validated['user_id'] = $request->user()->id;
-
         if ($request->hasFile('gambar')) {
             $validated['gambar'] = $request->file('gambar')->store('berita', 'public');
         }
+
+        // Set user_id jika user login, jika tidak set default
+        $validated['user_id'] = $request->user() ? $request->user()->id : 1;
 
         ModelBerita::create($validated);
 
@@ -63,28 +53,18 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ModelBerita $beritum, Request $request)
+    public function show(ModelBerita $beritum)
     {
-        // Admin dapat melihat semua berita, UKM hanya melihat berita milik mereka
-        if ($request->user()->role !== 'admin' && $beritum->user_id !== $request->user()->id) {
-            abort(403, 'Anda tidak memiliki akses untuk melihat berita ini');
-        }
-        
         return Inertia::render('berita/show', [
-            'berita' => $beritum
+            'berita' => $beritum->load('user')
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ModelBerita $beritum, Request $request)
+    public function edit(ModelBerita $beritum)
     {
-        // Admin dapat mengedit semua berita, UKM hanya mengedit berita milik mereka
-        if ($request->user()->role !== 'admin' && $beritum->user_id !== $request->user()->id) {
-            abort(403, 'Anda tidak memiliki akses untuk mengedit berita ini');
-        }
-        
         return Inertia::render('berita/edit', [
             'berita' => $beritum
         ]);
@@ -95,19 +75,11 @@ class BeritaController extends Controller
      */
     public function update(Request $request, ModelBerita $beritum)
     {
-        // Admin dapat mengupdate semua berita, UKM hanya update berita milik mereka
-        if ($request->user()->role !== 'admin' && $beritum->user_id !== $request->user()->id) {
-            abort(403, 'Anda tidak memiliki akses untuk mengubah berita ini');
-        }
-        
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
             'isi' => 'required|string',
             'tanggal' => 'required|date',
         ]);
-
-        // Mempertahankan user_id yang sama
-        $validated['user_id'] = $beritum->user_id;
 
         if ($request->hasFile('gambar')) {
             $validated['gambar'] = $request->file('gambar')->store('berita', 'public');
@@ -121,13 +93,8 @@ class BeritaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ModelBerita $beritum, Request $request)
+    public function destroy(ModelBerita $beritum)
     {
-        // Admin dapat menghapus semua berita, UKM hanya hapus berita milik mereka
-        if ($request->user()->role !== 'admin' && $beritum->user_id !== $request->user()->id) {
-            abort(403, 'Anda tidak memiliki akses untuk menghapus berita ini');
-        }
-        
         $beritum->delete();
 
         return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus!');

@@ -7,13 +7,11 @@ import { Link, usePage } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid, Newspaper, Users } from 'lucide-react';
 import AppLogo from './app-logo';
 
-// Definisikan tipe untuk auth user
 interface PageProps {
   auth: {
     user: {
       id: number;
       name: string;
-      role: string;
     };
   };
   [key: string]: unknown;
@@ -21,8 +19,6 @@ interface PageProps {
 
 export function AppSidebar() {
   const { auth } = usePage<PageProps>().props;
-  const isAdmin = auth.user.role === 'admin';
-  const isUkm = auth.user.role === 'ukm';
   
   const mainNavItems: NavItem[] = [
     {
@@ -30,37 +26,19 @@ export function AppSidebar() {
       href: '/dashboard',
       icon: LayoutGrid,
     },
-  ];
-  
-  // Menu Berita untuk admin dan ukm
-  if (isAdmin || isUkm) {
-    mainNavItems.push({
-      title: 'Berita',
-      href: '/berita',
-      icon: Newspaper,
-    });
-  }
-  
-  // Menu Manajemen Anggota hanya untuk ukm
-  if (isUkm) {
-    mainNavItems.push({
-      title: 'Manajemen Anggota',
-      href: '/anggota',
+    {
+      title: 'E-QSL',
+      href: '/esql',
       icon: Users,
-    });
-  }
+    },
+    {
+      title: 'Berita',
+      href: '/berita', 
+      icon: Newspaper,
+    }
+  ];
 
   const footerNavItems: NavItem[] = [
-    {
-      title: 'Repository',
-      href: 'https://github.com/laravel/react-starter-kit',
-      icon: Folder,
-    },
-    {
-      title: 'Documentation',
-      href: 'https://laravel.com/docs/starter-kits#react',
-      icon: BookOpen,
-    },
   ];
 
   return (

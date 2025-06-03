@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronRight, BookOpen, Menu, X } from "lucide-react"
+import { ChevronRight, Menu, X } from "lucide-react"
+import Foto from "@/assets/orari.png"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -16,24 +17,30 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="flex items-center"
             >
-              <div className="w-10 h-10 rounded-full bg-[#02188B] flex items-center justify-center mr-3">
-                <BookOpen className="w-5 h-5 text-white" />
+              <div className="w-25 h-10 rounded-full bg-[#ffff] flex items-center justify-center mr-3">
+               <img
+                src={Foto}
+                alt="Logo ORARI"
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-lg"
+              />
               </div>
-              <div>
-                <h1 className="text-lg font-bold text-[#02188B]">SIMAWA</h1>
-                <p className="text-xs text-gray-500">Jayanusa</p>
-              </div>
+              {/* <div>
+                <h1 className="text-lg font-bold text-[#CC1616]">ORARI</h1>
+                <p className="text-lg font-bold text-[#CC1616]"> Daerah Sumatera Barat</p>
+              </div> */}
             </motion.div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {[
-              { name: "Beranda", href: "#hero" },
-              { name: "Berita UKM", href: "#news" },
-              { name: "UKM", href: "#ukm-showcase" },
-              { name: "Testimoni", href: "#testimonials" },
-              { name: "Kontak", href: "#footer" }
+              { name: "Home", href: "#hero" },
+              { name: "Event", href: "https://orari.or.id/events/" },
+              { name: "EQSL", href: "/public/esql" },
+              { name: "Bimbingan & Pelatihan", href: "https://orari.or.id/diy-aprs-tracker-menggunakan-ht-uv-k5-k6/" },
+              { name: "Contact", href: "#footer" }
             ].map((item, index) => (
               <motion.a
                 key={item.name}
@@ -41,7 +48,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="text-gray-700 hover:text-[#02188B] px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-[#CC1616] px-3 py-2 text-sm font-medium transition-colors"
               >
                 {item.name}
               </motion.a>
@@ -54,7 +61,7 @@ export default function Header() {
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#02188B] text-white px-4 py-2 rounded-md text-sm font-medium flex items-center"
+              className="bg-[#CC1616] text-white px-4 py-2 rounded-md text-sm font-medium flex items-center"
               href={route('login')}
             >
               Masuk <ChevronRight className="ml-1 h-4 w-4" />
@@ -84,22 +91,22 @@ export default function Header() {
           >
             <div className="px-4 pt-2 pb-3 space-y-1">
               {[
-                { name: "Beranda", href: "#hero" },
-                { name: "Berita UKM", href: "#news" },
-                { name: "UKM", href: "#ukm-showcase" },
-                { name: "Testimoni", href: "#testimonials" },
-                { name: "Kontak", href: "#footer" }
+                { name: "Home", href: "#hero" },
+                { name: "Event", href: "https://orari.or.id/events/" },
+                { name: "E-QSL", href: "/public/esql" },
+                { name: "Bimbingan & Pelatihan", href: "https://orari.or.id/diy-aprs-tracker-menggunakan-ht-uv-k5-k6/" },
+                { name: "Contact", href: "#footer" }
               ].map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#02188B] hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#CC1616] hover:bg-gray-50 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <a href={route('login')} className="mt-3 w-full bg-[#02188B] text-white px-4 py-2 rounded-md text-sm font-medium flex items-center justify-center">
+              <a href={route('login')} className="mt-3 w-full bg-[#CC1616] text-white px-4 py-2 rounded-md text-sm font-medium flex items-center justify-center">
                 Masuk <ChevronRight className="ml-1 h-4 w-4" />
               </a>
             </div>

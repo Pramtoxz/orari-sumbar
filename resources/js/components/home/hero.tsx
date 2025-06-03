@@ -1,10 +1,17 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import Foto from "@/assets/contoh.png"
+import Foto from "@/assets/tesss.jpg"
 
 export default function Hero() {
+  const scrollToNews = () => {
+    const newsSection = document.getElementById('news');
+    if (newsSection) {
+      newsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-[#02188B] to-[#0139A9] text-white">
+    <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-[#CC1616] to-[#CC1616] text-white">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-5"></div>
       </div>
@@ -18,19 +25,22 @@ export default function Hero() {
             className="space-y-6"
           >
             <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">
-              Sistem Informasi Mahasiswa
+              Organisasi Amatir Radio Indonesia
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Informasi UKM Terkini di Kampus
+              ORARI
+              <br />
+              Daerah Sumatera Barat
             </h1>
             <p className="text-lg md:text-xl text-blue-100">
-              Dapatkan informasi terbaru tentang kegiatan dan berita acara UKM di Jayanusa.
+              Dapatkan informasi terbaru tentang kegiatan dan berita acara ORARI Daerah Sumatera Barat.
             </p>
             <div className="flex flex-wrap gap-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#02188B] px-6 py-3 rounded-md font-medium flex items-center"
+                className="bg-white text-[#CC1616] px-6 py-3 rounded-md font-medium flex items-center"
+                onClick={() => window.location.href = '/artikel'}
               >
                 Lihat Berita <ArrowRight className="ml-2 h-4 w-4" />
               </motion.button>
@@ -38,6 +48,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-transparent border border-white text-white px-6 py-3 rounded-md font-medium"
+                onClick={() => window.open('https://orari.or.id/events/', '_blank')}
               >
                 Kalender Kegiatan
               </motion.button>

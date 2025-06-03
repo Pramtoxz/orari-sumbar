@@ -11,12 +11,12 @@ export default function Footer() {
                 <BookOpen className="w-5 h-5 text-[#02188B]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">SIMAK</h3>
-                <p className="text-xs text-gray-400">STMIK AMIK Jayanusa</p>
+                <h3 className="text-lg font-bold">ORARI</h3>
+                <p className="text-xs text-gray-400">Daerah Sumatera Barat</p>
               </div>
             </div>
             <p className="text-gray-400 mb-4">
-              Sistem Informasi Mahasiswa untuk kegiatan UKM di STMIK AMIK Jayanusa.
+              Sistem Informasi Radio Amatir untuk kegiatan ORARI di Sumatera Barat.
             </p>
             <div className="flex space-x-4">
               {["facebook", "twitter", "instagram", "youtube"].map((social) => (
@@ -33,29 +33,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Tautan Cepat</h3>
-            <ul className="space-y-2">
-              {["Beranda", "Berita UKM", "Kalender Kegiatan", "Tentang Kami", "Kontak"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-bold mb-4">UKM</h3>
-            <ul className="space-y-2">
-              {["Teknologi Informasi", "Olahraga", "Seni & Budaya", "Jurnalistik", "Bahasa Inggris"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    UKM {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <h3 className="text-lg font-bold mb-4"></h3>
           </div>
 
           <div>
@@ -63,22 +41,18 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-gray-800 flex-shrink-0 mt-1"></div>
-                <span>Jl. Jendral Ahmad Yani No., Padang, Sumatera Barat</span>
+                <span>Jl. Batang kampar No. 5 Sport hall, Komp. Gor. Hj. Agus Salim</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-5 h-5 rounded-full bg-gray-800 flex-shrink-0"></div>
-                <span>info@jayanusa.ac.id</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-gray-800 flex-shrink-0"></div>
-                <span>(0751) 7054506</span>
+                <span>+62 852-7448-8588</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} STMIK AMIK Jayanusa. Hak Cipta Dilindungi.</p>
+          <p>&copy; {new Date().getFullYear()} ORARI Sumbar. Hak Cipta Dilindungi.</p>
         </div>
       </div>
     </footer>

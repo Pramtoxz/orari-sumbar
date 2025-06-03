@@ -3,22 +3,22 @@ import { motion } from "framer-motion"
 export default function Testimonials() {
   const testimonialsList = [
     {
-      name: "Andi Pratama",
-      role: "Ketua UKM Teknologi",
+      name: "Ir. Ahmad Syafei",
+      role: "Ketua ORARI Daerah Sumbar",
       quote:
-        "Sistem informasi ini sangat membantu kami dalam mengelola kegiatan UKM dan menjangkau lebih banyak mahasiswa yang tertarik bergabung.",
+        "ORARI Sumbar terus berkomitmen dalam pengembangan komunikasi radio amatir dan peningkatan kapasitas anggota dalam menghadapi situasi darurat.",
     },
     {
-      name: "Siti Rahma",
-      role: "Anggota UKM Jurnalistik",
+      name: "Zulkifli Rahman",
+      role: "Koordinator Emergency Communications",
       quote:
-        "Berkat platform ini, saya bisa dengan mudah mendapatkan informasi tentang kegiatan UKM yang akan datang dan tidak pernah ketinggalan event penting.",
+        "Sebagai garda terdepan komunikasi darurat, kami selalu siap membantu dalam situasi bencana dan memberikan dukungan komunikasi yang vital.",
     },
     {
-      name: "Budi Santoso",
-      role: "Anggota UKM Olahraga",
+      name: "Hj. Rini Suryani",
+      role: "Anggota Senior ORARI Sumbar",
       quote:
-        "Pendaftaran online membuat proses bergabung dengan UKM menjadi sangat mudah. Dokumentasi kegiatan juga tersimpan dengan baik di sistem.",
+        "Selama 20 tahun bergabung dengan ORARI, saya menyaksikan bagaimana organisasi ini berkembang dan memberikan dampak positif bagi masyarakat Sumbar.",
     },
   ]
 
@@ -32,8 +32,8 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Apa Kata Mahasiswa</h2>
-          <p className="text-lg text-gray-600">Pengalaman mahasiswa yang telah bergabung dengan UKM di kampus</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Suara Anggota ORARI</h2>
+          <p className="text-lg text-gray-600">Pengalaman dan pandangan dari para anggota ORARI Daerah Sumatera Barat</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">

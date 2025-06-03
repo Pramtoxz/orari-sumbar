@@ -17,39 +17,9 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Admin',
-            'email' => 'admin@jayanusa.ac.id',
+            'email' => 'admin@orari.org.id',
             'password' => Hash::make('password'),
             'role' => 'admin',
-        ]);
-        User::factory()->create([
-            'name' => 'UKM Senja',
-            'email' => 'senja@jayanusa.ac.id',
-            'password' => Hash::make('password'),
-            'role' => 'ukm',
-        ]);
-        User::factory()->create([
-            'name' => 'UKM Robotik',
-            'email' => 'robotik@jayanusa.ac.id',
-            'password' => Hash::make('password'),
-            'role' => 'ukm',
-        ]);
-        User::factory()->create([
-            'name' => 'MAPALA',
-            'email' => 'mapala@jayanusa.ac.id',
-            'password' => Hash::make('password'),
-            'role' => 'ukm',
-        ]);
-        User::factory()->create([
-            'name' => 'FSI',
-            'email' => 'fsi@jayanusa.ac.id',
-            'password' => Hash::make('password'),
-            'role' => 'ukm',
-        ]);
-        User::factory()->create([
-            'name' => 'UKM KWU',
-            'email' => 'kwu@jayanusa.ac.id',
-            'password' => Hash::make('password'),
-            'role' => 'ukm',
         ]);
     }
 }
