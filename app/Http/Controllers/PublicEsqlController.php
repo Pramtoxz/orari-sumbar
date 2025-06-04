@@ -13,8 +13,7 @@ class PublicEsqlController extends Controller
         $esqls = ModelEsql::latest()->get();
         
         return Inertia::render('esql/public/index', [
-            'esqls' => $esqls,
-            'routePrefix' => 'esql.'
+            'esqls' => $esqls
         ]);
     }
 
@@ -27,16 +26,14 @@ class PublicEsqlController extends Controller
             ->get();
 
         return Inertia::render('esql/public/index', [
-            'searchResults' => $results,
-            'routePrefix' => 'esql.'
+            'searchResults' => $results
         ]);
     }
 
     public function show(ModelEsql $esql)
     {
         return Inertia::render('esql/public/show', [
-            'esql' => $esql,
-            'routePrefix' => 'esql.'
+            'esql' => $esql
         ]);
     }
 } 

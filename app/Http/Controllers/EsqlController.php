@@ -16,8 +16,7 @@ class EsqlController extends Controller
         $esql = ModelEsql::latest()->get();
         
         return Inertia::render('esql/admin/index', [
-            'esql' => $esql,
-            'routePrefix' => 'admin.esql.'
+            'esql' => $esql
         ]);
     }
 
@@ -26,9 +25,7 @@ class EsqlController extends Controller
      */
     public function create()
     {
-        return Inertia::render('esql/admin/create', [
-            'routePrefix' => 'admin.esql.'
-        ]);
+        return Inertia::render('esql/admin/create');
     }
 
     /**
@@ -58,8 +55,7 @@ class EsqlController extends Controller
     public function show(ModelEsql $esql)
     {
         return Inertia::render('esql/admin/show', [
-            'esql' => $esql,
-            'routePrefix' => 'admin.esql.'
+            'esql' => $esql
         ]);
     }
 
@@ -69,8 +65,7 @@ class EsqlController extends Controller
     public function edit(ModelEsql $esql)
     {
         return Inertia::render('esql/admin/edit', [
-            'esql' => $esql,
-            'routePrefix' => 'admin.esql.'
+            'esql' => $esql
         ]);
     }
 
