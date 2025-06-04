@@ -6,6 +6,14 @@ import Foto from "@/assets/orari.png"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const menuItems = [
+    { name: "Home", href: "#hero" },
+    { name: "Event", href: "https://orari.or.id/events/" },
+    { name: "E-QSL", href: "/esql" },
+    { name: "Bimbingan & Pelatihan", href: "https://orari.or.id/diy-aprs-tracker-menggunakan-ht-uv-k5-k6/" },
+    { name: "Contact", href: "#footer" }
+  ]
+
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,13 +43,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {[
-              { name: "Home", href: "#hero" },
-              { name: "Event", href: "https://orari.or.id/events/" },
-              { name: "EQSL", href: "/public/esql" },
-              { name: "Bimbingan & Pelatihan", href: "https://orari.or.id/diy-aprs-tracker-menggunakan-ht-uv-k5-k6/" },
-              { name: "Contact", href: "#footer" }
-            ].map((item, index) => (
+            {menuItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
@@ -90,13 +92,7 @@ export default function Header() {
             className="md:hidden bg-white border-b border-gray-100"
           >
             <div className="px-4 pt-2 pb-3 space-y-1">
-              {[
-                { name: "Home", href: "#hero" },
-                { name: "Event", href: "https://orari.or.id/events/" },
-                { name: "E-QSL", href: "/public/esql" },
-                { name: "Bimbingan & Pelatihan", href: "https://orari.or.id/diy-aprs-tracker-menggunakan-ht-uv-k5-k6/" },
-                { name: "Contact", href: "#footer" }
-              ].map((item) => (
+              {menuItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
