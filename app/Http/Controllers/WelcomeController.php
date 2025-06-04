@@ -8,6 +8,11 @@ use Inertia\Inertia;
 
 class WelcomeController extends Controller
 {
+    public function __construct()
+    {
+        // Pastikan tidak ada middleware auth
+    }
+
     public function index()
     {
         $berita = ModelBerita::with('user')

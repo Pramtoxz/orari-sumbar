@@ -47,19 +47,4 @@ class User extends Authenticatable
         ];
     }
     
-    /**
-     * Check if user has role UKM
-     */
-    public function isUkm(): bool
-    {
-        return $this->role === 'ukm';
-    }
-    
-    /**
-     * Get all berita for this user
-     */
-    public function beritas()
-    {
-        return $this->hasMany(ModelBerita::class);
-    }
 }

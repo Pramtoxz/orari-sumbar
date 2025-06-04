@@ -12,8 +12,9 @@ class PublicEsqlController extends Controller
     {
         $esqls = ModelEsql::latest()->get();
         
-        return Inertia::render('esql/public', [
-            'esqls' => $esqls
+        return Inertia::render('esql/public/index', [
+            'esqls' => $esqls,
+            'routePrefix' => 'esql.'
         ]);
     }
 
@@ -25,15 +26,17 @@ class PublicEsqlController extends Controller
             ->orWhere('nama', 'LIKE', "%{$query}%")
             ->get();
 
-        return Inertia::render('esql/public', [
-            'searchResults' => $results
+        return Inertia::render('esql/public/index', [
+            'searchResults' => $results,
+            'routePrefix' => 'esql.'
         ]);
     }
 
     public function show(ModelEsql $esql)
     {
-        return Inertia::render('esql/public-show', [
-            'esql' => $esql
+        return Inertia::render('esql/public/show', [
+            'esql' => $esql,
+            'routePrefix' => 'esql.'
         ]);
     }
 } 

@@ -15,8 +15,9 @@ class EsqlController extends Controller
     {
         $esql = ModelEsql::latest()->get();
         
-        return Inertia::render('esql/index', [
-            'esql' => $esql
+        return Inertia::render('esql/admin/index', [
+            'esql' => $esql,
+            'routePrefix' => 'admin.esql.'
         ]);
     }
 
@@ -25,7 +26,9 @@ class EsqlController extends Controller
      */
     public function create()
     {
-        return Inertia::render('esql/create');
+        return Inertia::render('esql/admin/create', [
+            'routePrefix' => 'admin.esql.'
+        ]);
     }
 
     /**
@@ -46,7 +49,7 @@ class EsqlController extends Controller
 
         ModelEsql::create($validated);
 
-        return redirect()->route('esql.index')->with('success', 'Data E-QSL berhasil ditambahkan!');
+        return redirect()->route('admin.esql.index')->with('success', 'Data E-QSL berhasil ditambahkan!');
     }
 
     /**
@@ -54,8 +57,9 @@ class EsqlController extends Controller
      */
     public function show(ModelEsql $esql)
     {
-        return Inertia::render('esql/show', [
-            'esql' => $esql
+        return Inertia::render('esql/admin/show', [
+            'esql' => $esql,
+            'routePrefix' => 'admin.esql.'
         ]);
     }
 
@@ -64,8 +68,9 @@ class EsqlController extends Controller
      */
     public function edit(ModelEsql $esql)
     {
-        return Inertia::render('esql/edit', [
-            'esql' => $esql
+        return Inertia::render('esql/admin/edit', [
+            'esql' => $esql,
+            'routePrefix' => 'admin.esql.'
         ]);
     }
 
@@ -87,7 +92,7 @@ class EsqlController extends Controller
 
         $esql->update($validated);
 
-        return redirect()->route('esql.index')->with('success', 'Data E-QSL berhasil diperbarui!');
+        return redirect()->route('admin.esql.index')->with('success', 'Data E-QSL berhasil diperbarui!');
     }
 
     /**
@@ -97,6 +102,6 @@ class EsqlController extends Controller
     {
         $esql->delete();
 
-        return redirect()->route('esql.index')->with('success', 'Data E-QSL berhasil dihapus!');
+        return redirect()->route('admin.esql.index')->with('success', 'Data E-QSL berhasil dihapus!');
     }
 } 
