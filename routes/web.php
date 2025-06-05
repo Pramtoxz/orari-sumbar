@@ -22,7 +22,11 @@ Route::get('publik/esql/{esql}', [PublicEsqlController::class, 'show'])->name('p
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('esql', EsqlController::class);
+    Route::get('esql', [EsqlController::class, 'index'])->name('admin.esql.index');
+    Route::post('esql', [EsqlController::class, 'store'])->name('admin.esql.store');
+    Route::get('esql/{esql}', [EsqlController::class, 'show'])->name('admin.esql.show');
+    Route::put('esql/{esql}', [EsqlController::class, 'update'])->name('admin.esql.update');
+    Route::delete('esql/{esql}', [EsqlController::class, 'destroy'])->name('admin.esql.destroy');
     Route::controller(BeritaController::class)->group(function () {
         Route::get('/berita', 'index')->name('berita.index');
         Route::get('/berita/create', 'create')->name('berita.create');
