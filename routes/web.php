@@ -14,9 +14,9 @@ Route::get('/artikel', [WelcomeController::class, 'artikelIndex'])->name('artike
 Route::get('/artikel/{berita}', [WelcomeController::class, 'artikelShow'])->name('artikel.show');
 
 // Route untuk ESQL publik
-Route::get('public/esql', [PublicEsqlController::class, 'index'])->name('public.esql.index');
-Route::post('public/esql/search', [PublicEsqlController::class, 'search'])->name('public.esql.search');
-Route::get('public/esql/{esql}', [PublicEsqlController::class, 'show'])->name('public.esql.show');
+Route::get('publik/esql', [PublicEsqlController::class, 'index'])->name('publik.esql.index');
+Route::post('publik/esql/search', [PublicEsqlController::class, 'search'])->name('publik.esql.search');
+Route::get('publik/esql/{esql}', [PublicEsqlController::class, 'show'])->name('publik.esql.show');
 
 // Route untuk manajemen berita (CRUD operations)
 
