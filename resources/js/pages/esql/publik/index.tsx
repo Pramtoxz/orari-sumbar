@@ -121,7 +121,7 @@ export default function PublicEsql({ esqls }: PageProps) {
                                                     asChild
                                                 >
                                                     <a 
-                                                        href={`/public/esql/${esql.id}`}
+                                                        href={`/publik/esql/${esql.id}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
