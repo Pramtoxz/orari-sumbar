@@ -18,15 +18,22 @@ Route::get('publik/esql', [PublicEsqlController::class, 'index'])->name('publik.
 Route::post('publik/esql/search', [PublicEsqlController::class, 'search'])->name('publik.esql.search');
 Route::get('publik/esql/{esql}', [PublicEsqlController::class, 'show'])->name('publik.esql.show');
 
-// Route untuk manajemen berita (CRUD operations)
-
+// Route untuk area admin (setelah login)
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('esql', [EsqlController::class, 'index'])->name('admin.esql.index');
-    Route::post('esql', [EsqlController::class, 'store'])->name('admin.esql.store');
-    Route::get('esql/{esql}', [EsqlController::class, 'show'])->name('admin.esql.show');
-    Route::put('esql/{esql}', [EsqlController::class, 'update'])->name('admin.esql.update');
-    Route::delete('esql/{esql}', [EsqlController::class, 'destroy'])->name('admin.esql.destroy');
+    
+    // Route untuk manajemen ESQL (admin)
+    Route::controller(EsqlController::class)->group(function () {
+        Route::get('/esql', 'index')->name('admin.esql.index');
+        Route::get('/esql/create', 'create')->name('admin.esql.create');
+        Route::post('/esql', 'store')->name('admin.esql.store');
+        Route::get('/esql/{esql}', 'show')->name('admin.esql.show');
+        Route::get('/esql/{esql}/edit', 'edit')->name('admin.esql.edit');
+        Route::put('/esql/{esql}', 'update')->name('admin.esql.update');
+        Route::delete('/esql/{esql}', 'destroy')->name('admin.esql.destroy');
+    });
+    
+    // Route untuk manajemen berita
     Route::controller(BeritaController::class)->group(function () {
         Route::get('/berita', 'index')->name('berita.index');
         Route::get('/berita/create', 'create')->name('berita.create');
@@ -36,7 +43,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/berita/{beritum}', 'update')->name('berita.update');
         Route::delete('/berita/{beritum}', 'destroy')->name('berita.destroy');
     });
-    
 });
 
 require __DIR__.'/settings.php';

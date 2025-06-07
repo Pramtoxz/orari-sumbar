@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid, Newspaper, Users } from 'lucide-react';
+import { BookOpen, Radio, LayoutGrid, Newspaper } from 'lucide-react';
 import AppLogo from './app-logo';
 
 interface PageProps {
@@ -29,7 +29,7 @@ export function AppSidebar() {
     {
       title: 'E-QSL',
       href: '/esql',
-      icon: Users,
+      icon: Radio,
     },
     {
       title: 'Berita',
