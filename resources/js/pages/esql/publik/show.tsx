@@ -116,7 +116,7 @@ export default function PublicShow({ esql }: PageProps) {
                         margin-top: 1%;
                     }
                     .qso-data-section {
-                        margin-top: 6.5%;
+                        margin-top: 5%;
                         width: 55%;
                     }
                 `}
