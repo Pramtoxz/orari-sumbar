@@ -2,7 +2,7 @@ import { Head } from '@inertiajs/react';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { format, parseISO } from 'date-fns';
-import esertiImage from '@/assets/eserti.jpg';
+import esertiImage from '@/assets/sertifikatorari.jpg';
 
 interface Esql {
     id: number;

@@ -1,6 +1,6 @@
 import { Head } from '@inertiajs/react';
 import { format, parseISO } from 'date-fns';
-import esertiImage from '@/assets/eserti.jpg';
+import esertiImage from '@/assets/sertifikatorari.jpg';
 import { Button } from '@/components/ui/button';
 import { Printer } from 'lucide-react';
 
@@ -180,7 +180,7 @@ export default function PublicShow({ esql }: PageProps) {
                                             <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{esql.frekuensi}</span>
                                         </div>
                                         <div className="px-2">
-                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{`${esql.band}m`}</span>
+                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{`${esql.band}M`}</span>
                                         </div>
                                         <div className="px-2">
                                             <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{esql.mode}</span>
