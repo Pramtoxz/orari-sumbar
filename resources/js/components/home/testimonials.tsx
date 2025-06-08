@@ -3,22 +3,22 @@ import { motion } from "framer-motion"
 export default function Testimonials() {
   const testimonialsList = [
     {
-      name: "Ir. Ahmad Syafei",
-      role: "Ketua ORARI Daerah Sumbar",
+      name: "Dr. Ir. H AUDY JOINALDY, S.Pt., M.Sc., M.M.,M.IP., IPU., ASEAN, Eng, - YC5AUJ",
+      role: "Ketua ORARI Daerah Sumatera Barat",
       quote:
         "ORARI Sumbar terus berkomitmen dalam pengembangan komunikasi radio amatir dan peningkatan kapasitas anggota dalam menghadapi situasi darurat.",
     },
     {
-      name: "Zulkifli Rahman",
-      role: "Koordinator Emergency Communications",
+      name: "Drs. BUSTAVIDIA, M.M - YB5BV",
+      role: "Wakil Ketua ORARI Daerah Sumatera Barat",
       quote:
         "Sebagai garda terdepan komunikasi darurat, kami selalu siap membantu dalam situasi bencana dan memberikan dukungan komunikasi yang vital.",
     },
     {
-      name: "Hj. Rini Suryani",
-      role: "Anggota Senior ORARI Sumbar",
+      name: "Meldi Putra, S.Kom, M.Kom",
+      role: "Anggota ORARI Daerah Sumatera Barat",
       quote:
-        "Selama 20 tahun bergabung dengan ORARI, saya menyaksikan bagaimana organisasi ini berkembang dan memberikan dampak positif bagi masyarakat Sumbar.",
+        "Selama 5 tahun bergabung dengan ORARI, saya menyaksikan bagaimana organisasi ini berkembang dan memberikan dampak positif bagi masyarakat Sumbar.",
     },
   ]
 
