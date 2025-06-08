@@ -159,6 +159,7 @@ export default function PublicShow({ esql }: PageProps) {
                                 <div className="callsign-section">
                                     <div className="text-center">
                                         <span className="font-bold text-[#CC1616] text-6xl" style={{ fontFamily: 'VAG' }}>{esql.callsign}</span>
+                                        <div className="h-1 bg-[#CC1616] w-3/4 mx-auto mt-2"></div>
                                     </div>
                                 </div>
 
