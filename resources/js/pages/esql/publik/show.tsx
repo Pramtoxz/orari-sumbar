@@ -49,6 +49,13 @@ export default function PublicShow({ esql }: PageProps) {
             {/* Styling khusus untuk print */}
             <style>
                 {`
+                    @font-face {
+                        font-family: 'VAG';
+                        src: url('/js/assets/font/VAG.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+                    
                     @media print {
                         @page {
                             size: A4 landscape;
@@ -80,6 +87,13 @@ export default function PublicShow({ esql }: PageProps) {
                             background: none !important;
                         }
                     }
+                    
+                    /* Desktop scaling untuk semua ukuran layar */
+                    html, body {
+                        min-width: 1024px;
+                        overflow-x: auto;
+                    }
+                    
                     .print-only {
                         display: none;
                     }
@@ -96,23 +110,25 @@ export default function PublicShow({ esql }: PageProps) {
                         align-items: center;
                     }
                     .callsign-section {
-                        margin-top: 25%;
+                        margin-top: 26%;
                     }
                     .name-section {
-                        margin-top: 2%;
+                        margin-top: 1%;
                     }
                     .qso-data-section {
-                        margin-top: 7.5%;
+                        margin-top: 6.5%;
                         width: 55%;
                     }
                 `}
             </style>
 
             <div className="min-h-screen bg-gray-50 py-8">
-                <Head title="Preview Sertifikat ESQL" />
+                <Head title="Preview Sertifikat ESQL">
+                    <meta name="viewport" content="width=1024, user-scalable=yes" />
+                </Head>
                 
                 {/* Header dengan tombol - tidak akan diprint */}
-                <div className="bg-[#CC1616] text-white py-16 mb-8 no-print">
+                <div className="bg-[#CC1616] text-white py-16 mb-8 no-print min-w-[1024px]">
                     <div className="container mx-auto px-4">
                         <h1 className="text-4xl font-bold mb-4">Preview Sertifikat ESQL</h1>
                         <div className="flex justify-between items-center">
@@ -130,7 +146,7 @@ export default function PublicShow({ esql }: PageProps) {
                 </div>
 
                 {/* Container Sertifikat */}
-                <div className="max-w-4xl mx-auto px-4">
+                <div className="max-w-4xl mx-auto px-4 min-w-[1024px]">
                     <div className="bg-white rounded-lg shadow-lg p-6 certificate-container">
                         <div className="certificate-content">
                             <img 
@@ -142,35 +158,35 @@ export default function PublicShow({ esql }: PageProps) {
                             <div className="data-overlay">
                                 <div className="callsign-section">
                                     <div className="text-center">
-                                        <span className="font-bold text-black text-2xl">{esql.callsign}</span>
+                                        <span className="font-bold text-[#CC1616] text-6xl" style={{ fontFamily: 'VAG' }}>{esql.callsign}</span>
                                     </div>
                                 </div>
 
                                 <div className="name-section">
                                     <div className="text-center">
-                                        <span className="font-bold text-black text-2xl">{esql.nama}</span>
+                                        <span className="font-bold text-[#FFFF01] text-2xl" style={{ fontFamily: 'Istanbul' }}>{esql.nama}</span>
                                     </div>
                                 </div>
 
                                 <div className="qso-data-section">
                                     <div className="grid grid-cols-6 text-center">
                                         <div className="px-2">
-                                            <span className="font-bold text-black text-sm">{formatDate(esql.tanggal)}</span>
+                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{formatDate(esql.tanggal)}</span>
                                         </div>
                                         <div className="px-2">
-                                            <span className="font-bold text-black text-sm">{formatTime(esql.utc)}</span>
+                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{formatTime(esql.utc)}</span>
                                         </div>
                                         <div className="px-2">
-                                            <span className="font-bold text-black text-sm">{esql.frekuensi}</span>
+                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{esql.frekuensi}</span>
                                         </div>
                                         <div className="px-2">
-                                            <span className="font-bold text-black text-sm">{`${esql.band}m`}</span>
+                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{`${esql.band}m`}</span>
                                         </div>
                                         <div className="px-2">
-                                            <span className="font-bold text-black text-sm">{esql.mode}</span>
+                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{esql.mode}</span>
                                         </div>
                                         <div className="px-2">
-                                            <span className="font-bold text-black text-sm">{esql.rst}</span>
+                                            <span className="qso-text font-bold text-[#CC1616] text-sm" style={{ fontFamily: 'VAG' }}>{esql.rst}</span>
                                         </div>
                                     </div>
                                 </div>
