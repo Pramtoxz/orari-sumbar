@@ -141,7 +141,7 @@ export default function Show({ esql }: PageProps) {
                         margin-top: 26%;
                     }
                     .name-section {
-                        margin-top: 1%;
+                        margin-top: ;
                     }
                     .qso-data-section {
                         margin-top: 5%;
