@@ -81,7 +81,7 @@ export default function PublicShow({ esql }: PageProps) {
                             background: white;
                         }
                         .certificate-container {
-                            padding: 0 !important;
+                            padding: 1 !important;
                             margin: 0 !important;
                             box-shadow: none !important;
                             background: none !important;
@@ -130,9 +130,9 @@ export default function PublicShow({ esql }: PageProps) {
                 {/* Header dengan tombol - tidak akan diprint */}
                 <div className="bg-[#CC1616] text-white py-16 mb-8 no-print min-w-[1024px]">
                     <div className="container mx-auto px-4">
-                        <h1 className="text-4xl font-bold mb-4">Preview Sertifikat ESQL</h1>
+                        <h1 className="text-4xl font-bold mb-4">Preview Sertifikat e-QSL</h1>
                         <div className="flex justify-between items-center">
-                            <p className="text-lg opacity-90">Lihat dan unduh sertifikat ESQL Anda</p>
+                            <p className="text-lg opacity-90">Lihat dan unduh sertifikat e-QSL Anda</p>
                             <Button 
                                 variant="outline" 
                                 onClick={handlePrint}
