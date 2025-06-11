@@ -80,7 +80,7 @@ class EsqlController extends Controller
             'tanggal' => 'required|date',
             'utc' => 'required',
             'band' => 'required|integer',
-            'frekuensi' => 'required|integer',
+            'frekuensi' => 'required|string|max:255',
             'mode' => 'required|string|max:255',
             'rst' => 'required|integer',
         ]);
