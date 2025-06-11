@@ -1,0 +1,1 @@
+import{j as t}from"./app-dMuEVQUF.js";import{F as s}from"./orari-CPRg5lud.js";function r(o){return t.jsx("img",{src:s,alt:"ORARI Logo",className:`object-contain ${o.className||""}`,...o})}export{r as A};
