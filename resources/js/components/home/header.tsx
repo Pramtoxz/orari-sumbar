@@ -38,7 +38,7 @@ export default function Header() {
             {[
               { name: "Home", href: "#hero" },
               { name: "Event", href: "https://orari.or.id/events/" },
-              { name: "EQSL", href: "/publik/esql" },
+              { name: "e-QSL", href: "/publik/esql" },
               { name: "Bimbingan & Pelatihan", href: "https://orari.or.id/diy-aprs-tracker-menggunakan-ht-uv-k5-k6/" },
               { name: "Contact", href: "#footer" }
             ].map((item, index) => (
@@ -93,7 +93,7 @@ export default function Header() {
               {[
                 { name: "Home", href: "#hero" },
                 { name: "Event", href: "https://orari.or.id/events/" },
-                { name: "E-QSL", href: "/publik/esql" },
+                { name: "e-QSL", href: "/publik/esql" },
                 { name: "Bimbingan & Pelatihan", href: "https://orari.or.id/diy-aprs-tracker-menggunakan-ht-uv-k5-k6/" },
                 { name: "Contact", href: "#footer" }
               ].map((item) => (

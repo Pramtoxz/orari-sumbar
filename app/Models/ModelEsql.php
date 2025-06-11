@@ -22,7 +22,7 @@ class ModelEsql extends Model
         'tanggal' => 'date',
         'utc' => 'datetime',
         'band' => 'integer',
-        'frekuensi' => 'integer',
+        'frekuensi' => 'string',
         'rst' => 'integer'
     ];
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->time('utc');
             $table->integer('band');
-            $table->integer('frekuensi');
+            $table->string('frekuensi');
             $table->string('mode');
             $table->integer('rst');
             $table->timestamps();

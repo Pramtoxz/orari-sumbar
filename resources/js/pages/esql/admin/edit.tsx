@@ -144,7 +144,6 @@ export default function Edit({ esql }: PageProps) {
                                     <Label htmlFor="frekuensi">Frekuensi</Label>
                                     <Input
                                         id="frekuensi"
-                                        type="number"
                                         value={data.frekuensi}
                                         onChange={e => setData('frekuensi', e.target.value)}
                                     />
