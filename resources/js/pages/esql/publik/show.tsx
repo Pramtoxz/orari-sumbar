@@ -81,7 +81,7 @@ export default function PublicShow({ esql }: PageProps) {
                             background: white;
                         }
                         .certificate-container {
-                            padding: 1 !important;
+                            padding: 0 !important;
                             margin: 0 !important;
                             box-shadow: none !important;
                             background: none !important;

@@ -64,8 +64,8 @@ export default function PublicEsql({ esqls }: PageProps) {
             {/* Header */}
             <div className="bg-[#CC1616] text-white py-16">
                 <div className="container mx-auto px-4">
-                    <h1 className="text-4xl font-bold mb-4">ESQL Certificate Search</h1>
-                    <p className="text-lg opacity-90">Cari dan unduh sertifikat ESQL Anda</p>
+                    <h1 className="text-4xl font-bold mb-4">e-QSL Certificate Search</h1>
+                    <p className="text-lg opacity-90">Cari dan unduh sertifikat e-QSL Anda</p>
                 </div>
             </div>
 
