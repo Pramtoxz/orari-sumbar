@@ -2,7 +2,7 @@ import { Head } from '@inertiajs/react';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { format, parseISO } from 'date-fns';
-import esertiImage from '@/assets/sertifikatorari.jpg';
+import esertiImage from '@/assets/sertifikatoke.jpg';
 import { Button } from '@/components/ui/button';
 import { Printer } from 'lucide-react';
 
